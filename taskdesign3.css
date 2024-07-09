@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+@keyframes l4-1 {
+    0% { background-size: 0 4px, 4px 0, 0 4px, 4px 0, 0 4px, 4px 0, 0 4px }
+    7.14% { background-size: 25% 4px, 4px 0, 0 4px, 4px 0, 0 4px, 4px 0, 0 4px }
+    14.29% { background-size: 25% 4px, 4px 50%, 0 4px, 4px 0, 0 4px, 4px 0, 0 4px }
+    21.43% { background-size: 25% 4px, 4px 50%, 25% 4px, 4px 0, 0 4px, 4px 0, 0 4px }
+    28.57% { background-size: 25% 4px, 4px 50%, 25% 4px, 4px 100%, 0 4px, 4px 0, 0 4px }
+    35.71% { background-size: 25% 4px, 4px 50%, 25% 4px, 4px 100%, 25% 4px, 4px 0, 0 4px }
+    42.86% { background-size: 25% 4px, 4px 50%, 25% 4px, 4px 100%, 25% 4px, 4px 50%, 0 4px }
+    49%, 51% { background-size: 25% 4px, 4px 50%, 25% 4px, 4px 100%, 25% 4px, 4px 50%, 25% 4px }
+    57.14% { background-size: 0 4px, 4px 50%, 25% 4px, 4px 100%, 25% 4px, 4px 50%, 25% 4px }
+    64.29% { background-size: 0 4px, 4px 0, 25% 4px, 4px 100%, 25% 4px, 4px 50%, 25% 4px }
+    71.43% { background-size: 0 4px, 4px 0, 0 4px, 4px 100%, 25% 4px, 4px 50%, 25% 4px }
+    78.57% { background-size: 0 4px, 4px 0, 0 4px, 4px 0, 25% 4px, 4px 50%, 25% 4px }
+    85.71% { background-size: 0 4px, 4px 0, 0 4px, 4px 0, 0 4px, 4px 50%, 25% 4px }
+    92.86% { background-size: 0 4px, 4px 0, 0 4px, 4px 0, 0 4px, 4px 0, 25% 4px }
+    100% { background-size: 0 4px, 4px 0, 0 4px, 4px 0, 0 4px, 4px 0, 0 4px }
+}
+
+@keyframes l4-2 {
+    0%, 49.9% { background-position: 0 50%, bottom 20px left 16px, 20px 0, 50% 0, 40px 100%, bottom 0 right 16px, 60px 50% }
+    50%, 100% { background-position: right 60px top 50%, 16px 0, right 40px top 0, 50% 100%, right 20px bottom 0, right 16px top 20px, 100% 50% }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #F5F5F5, #65B4AC, #135049, #2F7971);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.content-container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.task-container {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.task-form-container {
+    padding-top: 0;
+}
+
+.header .title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #37625e;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+.h2 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #37625e;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.task-list .title, .priority-list .title {
+    font-size: 25px;
+    color: #3D6662;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.header .divider {
+    border: 0;
+    height: 3px;
+    background-color: #92D0CA;
+    margin-top: -10px; 
+    margin-left: 10px; 
+    width: calc(100% - 20px); 
+}
+
+.tasklist-divider .divider, .priority-divider .divider {
+    border: 0;
+    height: 2px;
+    background-color: #92D0CA;
+    margin-top: 30px;
+    margin-left: 10px; 
+    width: calc(100% - 20px); 
+}
+
+.taskName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+    flex-direction: column;
+}
+
+.taskName input {
+    width: 99%; 
+    border-radius: 20px; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.taskName label, .taskName input {
+    margin: 5px;
+}
+
+#taskName, #deadline, #complexity {
+    border: none;
+}
+
+.factor-container {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.deadline-container label, .complexity-container label, .effort-container label {
+    margin-left: 10px;
+}
+
+.deadline-container input, .complexity-container input, .effort-container input {
+    width: 150px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #3D6662;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    border: #3D6662 2px solid;
+}
+
+button:hover {
+    background-color: #3D6662;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.addBtnTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    width: 200px; 
+    height: 50px; 
+}
+
+/* Styles for the modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    overflow: hidden; 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    max-width: 600px; 
+    border-radius: 10px;
+    margin: 0; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.form-container label {
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-container input[type=text],
+.form-container input[type=date],
+.form-container input[type=number] {
+    width: calc(100% - 20px); 
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #3D6662;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #235A54;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskDetails {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 10px; 
+    margin: 0;
+    padding: 0; 
+}
+
+.taskItem.hide {
+    display: none;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #235A54 solid 2px;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    gap: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 10px;
+    justify-content: center;
+}
+
+
+/* Right bar styling */
+.right-bar {
+    width: 300px;
+    background-color: #92d1c9;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Priority list styling */
+.priority-list {
+    margin-top: 20px;
+}
+
+.priority-list .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#priorityList {
+    list-style-type: none;
+}
+
+#priorityList li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.priorityItem {
+    background-color: #82b9b4;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#priorityList li .priorityName {
+    font-weight: bold;
+}
+
+.priorityItem.hide {
+    display: none;
+}
+
