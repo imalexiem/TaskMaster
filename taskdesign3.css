@@ -50,7 +50,7 @@ body {
     max-width: 1200px;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #F5F5F5, #65B4AC, #135049, #2F7971);
+    background: linear-gradient(-45deg, #1a0033, #9c6cff, #181818, #3a2a4d);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -68,13 +68,14 @@ body {
     width: 100%;
     max-width: 1000px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: white;
-    border-radius: 10px;
+    background: rgba(28, 28, 28, 0.95);
+    border-radius: 18px;
     overflow: hidden;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .task-container {
+    position: relative;
     flex: 1;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -82,12 +83,13 @@ body {
 
 .task-form-container {
     padding-top: 0;
+    position: relative; /* Add this line */
 }
 
 .header .title {
     font-size: 40px;
     font-weight: 700;
-    color: #37625e;
+    color: #fff;
     margin-bottom: 1px;
     text-align: center;
 }
@@ -95,14 +97,14 @@ body {
 .h2 {
     font-size: 19px;
     font-weight: 500;
-    color: #37625e;
+    color: #fff;
     margin-bottom: 30px;
     text-align: center;
 }
 
 .task-list .title, .priority-list .title {
     font-size: 25px;
-    color: #3D6662;
+    color: #fff;
     margin-bottom: 20px;
     margin-left: 10px;
 }
@@ -110,7 +112,7 @@ body {
 .header .divider {
     border: 0;
     height: 3px;
-    background-color: #92D0CA;
+    background-color: rgba(255,255,255,0.2);
     margin-top: -10px; 
     margin-left: 10px; 
     width: calc(100% - 20px); 
@@ -119,7 +121,7 @@ body {
 .tasklist-divider .divider, .priority-divider .divider {
     border: 0;
     height: 2px;
-    background-color: #92D0CA;
+    background-color: rgba(255,255,255,0.2);
     margin-top: 30px;
     margin-left: 10px; 
     width: calc(100% - 20px); 
@@ -138,10 +140,16 @@ body {
     border-radius: 20px; 
     padding: 10px; 
     box-sizing: border-box; 
+        background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    transition: border 0.2s, background 0.2s;
 }
 
 .taskName label, .taskName input {
     margin: 5px;
+    color: #fff;
 }
 
 #taskName, #deadline, #complexity {
@@ -157,6 +165,7 @@ body {
 }
 
 .deadline-container label, .complexity-container label, .effort-container label {
+    color: #fff;
     margin-left: 10px;
 }
 
@@ -164,6 +173,21 @@ body {
     width: 150px;
     border-radius: 20px;
     padding: 10px;
+        background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    transition: border 0.2s, background 0.2s;
+}
+
+.taskName input:focus,
+.deadline-container input:focus,
+.complexity-container input:focus,
+.effort-container input:focus,
+.form-container input:focus {
+    border: 1.5px solid #9c6cff;
+    background: rgba(255,255,255,0.15);
+    outline: none;
 }
 
 button {
@@ -171,21 +195,20 @@ button {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #3D6662;
-    background-color: #fff;
-    border: none;
+    font-weight: bold;
+    color: black;
+    background: white;
+    border: 1.5px solid #888;
     border-radius: 45px;
-    transition: all 0.3s ease 0s;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
     cursor: pointer;
     outline: none;
-    border: #3D6662 2px solid;
 }
 
 button:hover {
-    background-color: #3D6662;
+    background: #66676d;
     color: #fff;
-    transform: translateY(-7px);
+    transform: translateY(-1px);
 }
 
 button:active {
@@ -216,17 +239,115 @@ button:active {
 }
 
 .modal-content {
-    background-color: #fefefe;
-    position: absolute; 
+    background: rgba(28, 28, 28, 0.98);
+    color: #fff;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; 
-    max-width: 600px; 
-    border-radius: 10px;
-    margin: 0; 
+    transform: translate(-50%, -50%);
+    padding: 36px 32px 32px 32px;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 18px;
+    margin: 0;
+    box-shadow: 0 8px 32px rgba(28, 28, 28, 0.38), 0 1.5px 0 #444 inset;
+    border: 1.5px dotted #9c6cff; /* three dots for styling */
+    overflow: visible;
+}
+
+/* Three dots (traffic lights) for modal header */
+.modal-content::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    width: 48px;
+    height: 14px;
+    background: none;
+}
+.modal-content .modal-dots {
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    display: flex;
+    gap: 8px;
+}
+.modal-content .modal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.modal-content .modal-dot.red { background: #ff5f56; border: 1px solid #e0443e; }
+.modal-content .modal-dot.yellow { background: #ffbd2e; border: 1px solid #dea123; }
+.modal-content .modal-dot.green { background: #27c93f; border: 1px solid #13a10e; }
+
+.task-container .task-dots {
+    position: absolute;
+    top: 18px;
+    left: 28px;
+    display: flex;
+    gap: 8px;
+}
+.task-container .task-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.task-container .task-dot.red { background: #ff5f56; border: 1px solid #e0443e; }
+.task-container .task-dot.yellow { background: #ffbd2e; border: 1px solid #dea123; }
+.task-container .task-dot.green { background: #27c93f; border: 1px solid #13a10e; }
+
+/* Modal text and input styles */
+.modal-content label,
+.modal-content h2,
+.modal-content .title {
+    color: #fff !important;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content input[type="number"] {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1.5px dotted #9c6cff;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.2s, background 0.2s;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="date"]:focus,
+.modal-content input[type="number"]:focus {
+    border: 1.5px solid #9c6cff;
+    background: rgba(156,108,255,0.08);
+    outline: none;
+}
+
+.modal-content button,
+.modal-content .form-container button {
+    background: white;
+    color: black;
+    border: 1.5px solid #888;
+    border-radius: 45px;
+    font-weight: bold;
+    padding: 12px 28px;
+    font-size: 15px;
+    margin-top: 18px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.modal-content button:hover,
+.modal-content .form-container button:hover {
+    background: #66676d;
+    color: #fff;
+    transform: translateY(-1px);
 }
 
 .close {
@@ -258,37 +379,46 @@ button:active {
     width: calc(100% - 20px); 
     padding: 8px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    transition: border 0.2s, background 0.2s;
 }
 
 .form-container button {
-    background-color: #3D6662;
-    color: white;
+    background: #44454a;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    border-radius: 4px;
+    font-weight: 500;
+    border-radius: 45px;
+        border: 1.5px solid #888;
     cursor: pointer;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+
 }
 
 .form-container button:hover {
-    background-color: #235A54;
+        background: #66676d;
+    color: #fff;
+    transform: translateY(-1px);
 }
 
 .icon-button {
-    background: none;
+    background: #fff;
     border: none;
     cursor: pointer;
     margin: 0;
-    padding: 0;
+    padding: 6px 10px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.2s, color 0.2s;
 }
 
 .taskDetails {
@@ -308,7 +438,9 @@ button:active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: #235A54 solid 2px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 10px;
     margin: 10px 0;
     padding: 10px;
@@ -326,20 +458,34 @@ ul {
 /* Right bar styling */
 .right-bar {
     width: 300px;
-    background-color: #92d1c9;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    background: rgba(200, 220, 230, 0.18); /* Muted glassy blue */
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
     padding: 20px;
     overflow-y: auto;
-}
-
-/* Priority list styling */
-.priority-list {
-    margin-top: 20px;
+    border-radius: 18px;
+    border: 1.5px solid rgba(156, 108, 255, 0.18);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    transition: background 0.3s;
 }
 
 .priority-list .title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.priorityItem {
+    background: rgba(255,255,255,0.13);
+    color: #fff;
+    border: 1.5px solid rgba(156, 108, 255, 0.18);
+    border-radius: 18px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(156,108,255,0.06);
+    backdrop-filter: blur(8px) saturate(160%);
+    -webkit-backdrop-filter: blur(8px) saturate(160%);
+    transition: background 0.3s;
 }
 
 #priorityList {
@@ -352,17 +498,55 @@ ul {
 }
 
 .priorityItem {
-    background-color: #82b9b4;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 18px;
     margin: 10px 0;
     padding: 10px;
 }
 
-#priorityList li .priorityName {
+.priorityItem .priorityName {
     font-weight: bold;
+    display: block;
+}
+
+.priorityItem .priorityDue {
+    font-weight: 400;
 }
 
 .priorityItem.hide {
     display: none;
 }
 
+/* --- PLACEHOLDER COLOR --- */
+input::placeholder {
+    color: rgba(255,255,255,0.6);
+    opacity: 1;
+}
+
+/* --- CHECKBOXES & RADIO --- */
+input[type="checkbox"], input[type="radio"] {
+    accent-color: #9c6cff;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* Makes the calendar icon white on Chrome/Safari/Edge */
+}
+
+input[type="date"]::-ms-input-placeholder {
+    color: #fff;
+}
+
+input[type="date"]::-moz-placeholder {
+    color: #fff;
+}
+
+input[type="date"]:-ms-input-placeholder {
+    color: #fff;
+}
+
+input[type="date"]::placeholder {
+    color: #fff;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager App</title>
+<link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/ffffff/task.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">
@@ -14,8 +15,12 @@
     <div class="container">
         <div class="content-container">
             <div class="task-container">
+                    <div class="task-dots">
+                        <span class="task-dot red"></span>
+                        <span class="task-dot yellow"></span>
+                        <span class="task-dot green"></span>
+                    </div>
                 <div class="task-form-container">
-    
                     <div class="header">
                         <h1 class="title" style="margin-bottom:-0.7cm;" >T.A.S.K Master</h1>
                         <h2 class="h2" >Task Assignment and Scheduling Kit</h2>
@@ -110,6 +115,11 @@
     <!-- Modal for Task Modification -->
     <div id="modifyModal" class="modal">
         <div class="modal-content">
+            <div class="modal-dots">
+                <span class="modal-dot red"></span>
+                <span class="modal-dot yellow"></span>
+                <span class="modal-dot green"></span>
+            </div>
             <span class="close">&times;</span>
             <h2>Modify Task</h2>
             <div class="form-container">
